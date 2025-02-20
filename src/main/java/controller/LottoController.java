@@ -1,15 +1,13 @@
 package controller;
 
 import config.Container;
-import factory.LottoFactory;
+import converter.InputConverter;
 import java.util.List;
-import model.Lotto;
 import model.Lottos;
 import model.Statistics;
 import service.LottoEvaluationService;
 import service.LottoGenerateService;
 import service.StatisticsService;
-import util.InputConverter;
 import view.ViewFacade;
 
 public class LottoController {

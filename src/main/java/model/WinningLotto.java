@@ -4,7 +4,6 @@ import error.ErrorMessage;
 import java.util.List;
 
 public class WinningLotto {
-    //private static WinningLotto INSTANCE;
     private Lotto basicLotto;
     private int bonusNumber;
 
@@ -13,22 +12,7 @@ public class WinningLotto {
         this.basicLotto = basicLotto;
         this.bonusNumber = bonusNumber;
     }
-
-//    public static void initialize(Lotto basicLotto, int bonusNumber) {
-//        if (INSTANCE == null) {
-//            INSTANCE = new WinningLotto(basicLotto, bonusNumber);
-//            return;
-//        }
-//        throw new IllegalStateException(ErrorMessage.WINNING_NUMBERS_ALREADY_DRAWN.getMessage());
-//    }
-
-//    public static WinningLotto getInstance() {
-//        if (INSTANCE == null) {
-//            throw new IllegalStateException(ErrorMessage.WINNING_NUMBERS_NOT_DRAWN_YET.getMessage());
-//        }
-//        return INSTANCE;
-//    }
-
+    
     private void validateBonusNumber(Lotto basicLotto, int bonusNumber) {
         validateDuplicatedBonusNumber(basicLotto, bonusNumber);
         validateBonusNumberRange(bonusNumber);

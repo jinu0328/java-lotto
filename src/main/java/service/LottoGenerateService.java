@@ -6,7 +6,6 @@ import java.util.ArrayList;
 import java.util.List;
 import model.Lotto;
 import model.Lottos;
-import util.RandomGenerator;
 
 public class LottoGenerateService {
     private static final Integer PRICE = 1000;
