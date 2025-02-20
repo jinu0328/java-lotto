@@ -30,7 +30,14 @@ public class Lotto {
     }
 
     public int extractPrize() {
+        validatePrizeTier();
         return prizeTier.getPrize();
+    }
+
+    private void validatePrizeTier() {
+        if (prizeTier == null) {
+            throw new IllegalStateException(ErrorMessage.PRIZE_NOT_DETERMINED.getMessage());
+        }
     }
 
     public boolean isTierMatched(PrizeTier tier) {
