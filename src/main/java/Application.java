@@ -19,7 +19,7 @@ public class Application {
         StatisticsService statisticsService = new StatisticsService();
         LottoEvaluationService lottoEvaluationService = new LottoEvaluationService(new ManualLottoFactory());
 
-        Container container = new Container(viewFacade, inputView, outputView, lottoGenerateService, statisticsService,
+        Container container = new Container(viewFacade, lottoGenerateService, statisticsService,
                 lottoEvaluationService);
 
         LottoController lottoController = new LottoController(container);
