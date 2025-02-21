@@ -8,7 +8,6 @@ import model.Lotto;
 import model.Lottos;
 
 public class LottoGenerateService {
-    private static final Integer PRICE = 1000;
     private final LottoFactory lottoFactory;
 
     public LottoGenerateService(LottoFactory lottoFactory) {
@@ -17,7 +16,7 @@ public class LottoGenerateService {
 
     public Lottos generateLottos(int purchaseAmount) {
         validatePurchaseAmount(purchaseAmount);
-        int count = purchaseAmount / PRICE;
+        int count = purchaseAmount / Lotto.PRICE;
 
         List<Lotto> lottos = new ArrayList<>();
 
@@ -29,7 +28,7 @@ public class LottoGenerateService {
     }
 
     private void validatePurchaseAmount(int purchaseAmount) {
-        if (purchaseAmount % PRICE != 0) {
+        if (purchaseAmount % Lotto.PRICE != 0) {
             throw new IllegalArgumentException(ErrorMessage.PURCHASE_AMOUNT_INVALID.getMessage());
         }
     }
