@@ -1,18 +1,17 @@
 package model;
 
 import error.ErrorMessage;
-import java.util.List;
 
-public class WinningLotto {
-    private Lotto basicLotto;
-    private int bonusNumber;
+public class WinningNumbers {
+    private final Lotto basicLotto;
+    private final int bonusNumber;
 
-    public WinningLotto(Lotto basicLotto, int bonusNumber) {
+    public WinningNumbers(Lotto basicLotto, int bonusNumber) {
         validateBonusNumber(basicLotto, bonusNumber);
         this.basicLotto = basicLotto;
         this.bonusNumber = bonusNumber;
     }
-    
+
     private void validateBonusNumber(Lotto basicLotto, int bonusNumber) {
         validateDuplicatedBonusNumber(basicLotto, bonusNumber);
         validateBonusNumberRange(bonusNumber);
@@ -30,11 +29,11 @@ public class WinningLotto {
         }
     }
 
-    public int getMatchCount(List<Integer> numbers) {
-        return basicLotto.countMatches(numbers);
+    public int getMatchCount(Lotto lotto) {
+        return basicLotto.countMatches(lotto);
     }
 
-    public boolean isBonusMatched(List<Integer> numbers) {
-        return numbers.contains(bonusNumber);
+    public boolean isBonusMatched(Lotto lotto) {
+        return lotto.isBonusMatched(bonusNumber);
     }
 }
